@@ -156,3 +156,22 @@ With new_temp AS(
 SELECT * from temp
 UNPIVOT (Temperature for code in (JAN ,FEB ,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC)))
 Select new_temp.temperature ,new_temp.year ||' '|| new_temp.code as "Date" from new_temp ;
+
+------------------------
+---The output --
+/*
+12.46	1901 JAN
+16.38	1901 FEB
+18.93	1901 MAR
+22.66	1901 APR
+24.99	1901 MAY
+28.37	1901 JUN
+29.08	1901 JUL
+28.82	1901 AUG
+26.72	1901 SEP
+23.91	1901 OCT
+18.24	1901 NOV
+14.83	1901 DEC
+-----
+12.43	1902 JAN
+/*
