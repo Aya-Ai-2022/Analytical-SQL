@@ -28,10 +28,10 @@ Create table onlineretail as select INVOICE, STOCKCODE, QUANTITY, PRICE, CUSTOME
 
 /*
 Dataset Story
-• This dataset describes UK Sales between DEC 2010 - DEC 2011 .
-• The product catalog of this company includes 2335 different products..
-• There is also information about 717 transactions from 110 customers.
---1-we want to calculate the highest revenue for highest day in each month top 10  Products that have been ordered
+â€¢ This dataset describes UK Sales between DEC 2010 - DEC 2011 .
+â€¢ The product catalog of this company includes 2335 different products..
+â€¢ There is also information about 717 transactions from 110 customers.
+--1-we want to calculate the highest revenue for highest day in each month. 
 */
   SELECT  t.month_,t.revenue  FROM( SELECT invoicedate, EXTRACT( MONTH FROM invoicedate )   || '-' || EXTRACT( YEAR FROM invoicedate ) as month_,QUANTITY*PRICE as revenue , 
   RANK() OVER( PARTITION BY EXTRACT(MONTH FROM invoicedate) ,EXTRACT(year FROM invoicedate) ORDER BY  (QUANTITY*PRICE) DESC) order_rank FROM onlineretail ) t
