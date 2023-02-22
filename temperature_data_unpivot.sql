@@ -1,3 +1,13 @@
+
+
+/*
+The following dataset contains the monthly avg temperature in Egypt in the last 100 years,
+We want to create a line chart to visualize how the temperature has changed over the years,
+however, the current table structure is not suitable for visualization, derive a new table that
+can be used to create a line chart with two columns, Date and Temperature.
+*/
+
+
 CREATE TABLE Temp 
 (
     Year	number,
@@ -140,14 +150,7 @@ commit;
 
 
 
-
-/*
-The following dataset contains the monthly avg temperature in Egypt in the last 100 years,
-We want to create a line chart to visualize how the temperature has changed over the years,
-however, the current table structure is not suitable for visualization, derive a new table that
-can be used to create a line chart with two columns, Date and Temperature.
-*/
-
+----------------*********************Answer*************************----------------------------------------------------------
 With new_temp AS(
 
 SELECT * from temp
